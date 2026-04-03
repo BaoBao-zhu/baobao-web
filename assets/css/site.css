@@ -362,7 +362,7 @@ a {
   top: 18px;
   left: 22px;
   right: 22px;
-  height: 34%;
+  height: 42%;
   z-index: 0;
 }
 
@@ -767,7 +767,7 @@ body[data-page="home"] .hero-gallery {
   top: 16px;
   left: 20px;
   right: 20px;
-  height: 33%;
+  height: 40%;
 }
 
 body[data-page="home"] .hero-gallery-stage::after {
@@ -777,7 +777,7 @@ body[data-page="home"] .hero-gallery-stage::after {
 }
 
 body[data-page="home"] .cover-copy > .eyebrow {
-  margin-top: 132px;
+  margin-top: 176px;
 }
 
 body[data-page="home"] .cover-copy h2,
