@@ -413,7 +413,7 @@ a {
 
 .hero-gallery-arrow {
   position: absolute;
-  top: 50%;
+  top: 31%;
   z-index: 2;
   width: 44px;
   height: 44px;
@@ -430,9 +430,10 @@ a {
 }
 
 .hero-gallery-arrow span {
-  font-size: 2rem;
+  display: block;
+  font-size: 1.9rem;
   line-height: 1;
-  transform: translateY(-1px);
+  transform: none;
 }
 
 .hero-gallery-arrow:hover {
@@ -441,11 +442,11 @@ a {
 }
 
 .hero-gallery-arrow-left {
-  left: 18px;
+  left: 22px;
 }
 
 .hero-gallery-arrow-right {
-  right: 18px;
+  right: 22px;
 }
 
 .hero-gallery-caption {
@@ -1240,6 +1241,7 @@ body[data-page="home"] .button.secondary {
   .hero-gallery-arrow {
     width: 40px;
     height: 40px;
+    top: 28%;
   }
 
   .hero-gallery-arrow-left {
