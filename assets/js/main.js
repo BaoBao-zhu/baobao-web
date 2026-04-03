@@ -247,10 +247,9 @@ function bindSearch() {
 function initHeroGallery() {
   const gallery = document.getElementById("hero-gallery");
   const stage = document.getElementById("hero-gallery-stage");
-  const caption = document.getElementById("hero-gallery-caption");
   const prev = document.getElementById("hero-gallery-prev");
   const next = document.getElementById("hero-gallery-next");
-  if (!gallery || !stage || !caption || !prev || !next) {
+  if (!gallery || !stage || !prev || !next) {
     return;
   }
 
@@ -271,7 +270,6 @@ function initHeroGallery() {
     const current = images[index];
     stage.style.backgroundImage = `url("${resolveSiteLink(current.src)}")`;
     stage.style.backgroundPosition = current.position || "center top";
-    caption.textContent = current.label || "";
   };
 
   prev.addEventListener("click", () => {

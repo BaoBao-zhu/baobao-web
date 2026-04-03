@@ -359,7 +359,8 @@ a {
 
 .hero-gallery {
   position: absolute;
-  inset: 0 0 38% 0;
+  inset: 0 0 auto 0;
+  height: 52%;
   z-index: 0;
 }
 
@@ -413,7 +414,7 @@ a {
 
 .hero-gallery-arrow {
   position: absolute;
-  top: 96px;
+  top: 50%;
   z-index: 2;
   width: 44px;
   height: 44px;
@@ -426,7 +427,7 @@ a {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transform: none;
+  transform: translateY(-50%);
   backdrop-filter: blur(4px);
   transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
 }
@@ -448,27 +449,11 @@ a {
 }
 
 .hero-gallery-arrow-left {
-  left: 22px;
+  left: 20px;
 }
 
 .hero-gallery-arrow-right {
-  right: 22px;
-}
-
-.hero-gallery-caption {
-  position: absolute;
-  top: 18px;
-  left: 18px;
-  z-index: 2;
-  padding: 8px 12px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 999px;
-  background: rgba(8, 18, 32, 0.16);
-  color: rgba(244, 249, 255, 0.86);
-  font-size: 0.84rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  backdrop-filter: blur(4px);
+  right: 20px;
 }
 
 .cover-copy::before {
@@ -771,7 +756,8 @@ body[data-page="home"] .cover-scenery {
 }
 
 body[data-page="home"] .hero-gallery {
-  inset: 0 0 42% 0;
+  inset: 0 0 auto 0;
+  height: 52%;
 }
 
 body[data-page="home"] .hero-gallery-stage::after {
@@ -1199,7 +1185,7 @@ body[data-page="home"] .button.secondary {
   }
 
   .hero-gallery {
-    inset: 0 0 48% 0;
+    height: 46%;
   }
 
   .article-toc {
@@ -1247,7 +1233,7 @@ body[data-page="home"] .button.secondary {
   .hero-gallery-arrow {
     width: 40px;
     height: 40px;
-    top: 72px;
+    top: 50%;
   }
 
   .hero-gallery-arrow-left {
@@ -1256,12 +1242,6 @@ body[data-page="home"] .button.secondary {
 
   .hero-gallery-arrow-right {
     right: 12px;
-  }
-
-  .hero-gallery-caption {
-    top: 12px;
-    left: 12px;
-    font-size: 0.76rem;
   }
 
   .resource-summary {
