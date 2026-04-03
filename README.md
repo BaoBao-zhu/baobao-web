@@ -11,15 +11,20 @@
 
 ## 目录
 
-- `index.html`: 页面结构
-- `styles.css`: 页面样式
-- `script.js`: 论文和资料数据
+- `index.html`: 首页概览
+- `pages/about/index.html`: 个人介绍页
+- `pages/papers/index.html`: 论文页
+- `pages/resources/index.html`: 资料页
+- `pages/timeline/index.html`: 时间线页
+- `assets/css/site.css`: 全站样式
+- `assets/js/site-data.js`: 全站内容数据
+- `assets/js/main.js`: 页面渲染逻辑
 
 ## 如何更新内容
 
-1. 修改 `index.html` 中的个人介绍、邮箱和外链。
-2. 修改 `script.js` 中的 `papers`、`resources`、`timelineEvents`、`toolboxLinks` 列表。
-3. 如果需要更换视觉风格，再调整 `styles.css`。
+1. 修改 `assets/js/site-data.js` 中的 `profile`、`papers`、`resources`、`timelineEvents`、`toolboxLinks`。
+2. 如果要新增一个完整页面，就在 `pages/` 下新建目录和 `index.html`。
+3. 如果需要更换视觉风格，再调整 `assets/css/site.css`。
 
 ## 本地预览
 
@@ -37,7 +42,10 @@ python3 -m http.server 8000
 
 推荐仓库结构：
 
-- 仓库根目录直接放 `index.html`、`styles.css`、`script.js`
+- 仓库根目录保留 `index.html`
+- 二级页面放在 `pages/`
+- 样式放在 `assets/css/`
+- 数据和渲染逻辑放在 `assets/js/`
 - 使用 `main` 分支直接发布
 - 添加 `.nojekyll`，避免被 Jekyll 处理
 
