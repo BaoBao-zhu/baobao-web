@@ -411,6 +411,59 @@ a {
   background: rgba(8, 18, 32, 0.32);
 }
 
+.hero-gallery-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  background: rgba(8, 18, 32, 0.18);
+  color: #f4f9ff;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transform: translateY(-50%);
+  backdrop-filter: blur(4px);
+  transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+
+.hero-gallery-arrow span {
+  font-size: 2rem;
+  line-height: 1;
+  transform: translateY(-1px);
+}
+
+.hero-gallery-arrow:hover {
+  border-color: rgba(126, 247, 198, 0.3);
+  background: rgba(8, 18, 32, 0.32);
+}
+
+.hero-gallery-arrow-left {
+  left: 18px;
+}
+
+.hero-gallery-arrow-right {
+  right: 18px;
+}
+
+.hero-gallery-caption {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  z-index: 2;
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  background: rgba(8, 18, 32, 0.16);
+  color: rgba(244, 249, 255, 0.86);
+  font-size: 0.84rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  backdrop-filter: blur(4px);
+}
+
 .cover-copy::before {
   content: "";
   position: absolute;
@@ -1184,9 +1237,23 @@ body[data-page="home"] .button.secondary {
     right: 14px;
   }
 
-  .hero-gallery-button {
-    padding: 8px 12px;
-    font-size: 0.88rem;
+  .hero-gallery-arrow {
+    width: 40px;
+    height: 40px;
+  }
+
+  .hero-gallery-arrow-left {
+    left: 12px;
+  }
+
+  .hero-gallery-arrow-right {
+    right: 12px;
+  }
+
+  .hero-gallery-caption {
+    top: 12px;
+    left: 12px;
+    font-size: 0.76rem;
   }
 
   .resource-summary {

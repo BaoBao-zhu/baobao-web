@@ -245,29 +245,46 @@ function bindSearch() {
 }
 
 function initHeroGallery() {
+  const gallery = document.getElementById("hero-gallery");
   const stage = document.getElementById("hero-gallery-stage");
-  const controls = document.getElementById("hero-gallery-controls");
-  if (!stage || !controls) {
+  const caption = document.getElementById("hero-gallery-caption");
+  const prev = document.getElementById("hero-gallery-prev");
+  const next = document.getElementById("hero-gallery-next");
+  if (!gallery || !stage || !caption || !prev || !next) {
     return;
   }
 
-  const buttons = Array.from(controls.querySelectorAll(".hero-gallery-button"));
-  if (!buttons.length) {
+  let images = [];
+  try {
+    images = JSON.parse(gallery.dataset.images || "[]");
+  } catch (error) {
+    images = [];
+  }
+
+  if (!images.length) {
     return;
   }
 
-  const setActive = (button) => {
-    const image = resolveSiteLink(button.dataset.image || "");
-    stage.style.backgroundImage = `url("${image}")`;
-    stage.style.backgroundPosition = button.dataset.position || "center top";
-    buttons.forEach((item) => item.classList.toggle("active", item === button));
+  let index = 0;
+
+  const render = () => {
+    const current = images[index];
+    stage.style.backgroundImage = `url("${resolveSiteLink(current.src)}")`;
+    stage.style.backgroundPosition = current.position || "center top";
+    caption.textContent = current.label || "";
   };
 
-  buttons.forEach((button) => {
-    button.addEventListener("click", () => setActive(button));
+  prev.addEventListener("click", () => {
+    index = (index - 1 + images.length) % images.length;
+    render();
   });
 
-  setActive(buttons[0]);
+  next.addEventListener("click", () => {
+    index = (index + 1) % images.length;
+    render();
+  });
+
+  render();
 }
 
 function init() {
