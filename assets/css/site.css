@@ -219,7 +219,7 @@ a {
 
 .hero-cover {
   grid-template-columns: 260px minmax(0, 1fr);
-  min-height: 540px;
+  min-height: 620px;
   gap: 22px;
   padding: 26px 0 6px;
   align-items: stretch;
@@ -347,7 +347,7 @@ a {
   flex-direction: column;
   justify-content: end;
   min-height: 100%;
-  padding: 34px;
+  padding: 34px 34px 40px;
   color: #f4f9ff;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(8, 20, 36, 0.46)),
@@ -359,16 +359,18 @@ a {
 
 .hero-gallery {
   position: absolute;
-  top: 14px;
-  left: 18px;
-  right: 18px;
-  height: 46%;
+  top: 18px;
+  left: 22px;
+  right: 22px;
+  height: 34%;
   z-index: 0;
 }
 
 .hero-gallery-stage {
   position: absolute;
   inset: 0;
+  border-radius: 22px;
+  overflow: hidden;
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
@@ -381,11 +383,11 @@ a {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(5, 12, 20, 0.06) 0%, rgba(5, 12, 20, 0.02) 12%, rgba(5, 12, 20, 0.02) 58%, rgba(5, 12, 20, 0.18) 78%, rgba(5, 12, 20, 0.72) 100%),
-    linear-gradient(90deg, rgba(5, 12, 20, 0.22) 0%, rgba(5, 12, 20, 0.03) 8%, rgba(5, 12, 20, 0.03) 92%, rgba(5, 12, 20, 0.22) 100%);
+    linear-gradient(180deg, rgba(5, 12, 20, 0.12) 0%, rgba(5, 12, 20, 0.03) 16%, rgba(5, 12, 20, 0.02) 54%, rgba(5, 12, 20, 0.28) 76%, rgba(5, 12, 20, 0.88) 100%),
+    linear-gradient(90deg, rgba(5, 12, 20, 0.28) 0%, rgba(5, 12, 20, 0.04) 10%, rgba(5, 12, 20, 0.04) 90%, rgba(5, 12, 20, 0.28) 100%);
   box-shadow:
-    inset 0 -80px 90px rgba(8, 16, 28, 0.38),
-    inset 0 14px 24px rgba(255, 255, 255, 0.04);
+    inset 0 -110px 120px rgba(8, 16, 28, 0.52),
+    inset 0 18px 28px rgba(255, 255, 255, 0.04);
 }
 
 .hero-gallery-controls {
@@ -762,16 +764,20 @@ body[data-page="home"] .cover-scenery {
 }
 
 body[data-page="home"] .hero-gallery {
-  top: 12px;
-  left: 16px;
-  right: 16px;
-  height: 44%;
+  top: 16px;
+  left: 20px;
+  right: 20px;
+  height: 33%;
 }
 
 body[data-page="home"] .hero-gallery-stage::after {
   background:
-    linear-gradient(180deg, rgba(5, 12, 20, 0.06) 0%, rgba(5, 12, 20, 0.02) 12%, rgba(5, 12, 20, 0.02) 56%, rgba(5, 12, 20, 0.16) 78%, rgba(5, 12, 20, 0.66) 100%),
-    linear-gradient(90deg, rgba(5, 12, 20, 0.18) 0%, rgba(5, 12, 20, 0.02) 8%, rgba(5, 12, 20, 0.02) 92%, rgba(5, 12, 20, 0.18) 100%);
+    linear-gradient(180deg, rgba(5, 12, 20, 0.1) 0%, rgba(5, 12, 20, 0.03) 16%, rgba(5, 12, 20, 0.02) 54%, rgba(5, 12, 20, 0.26) 76%, rgba(5, 12, 20, 0.84) 100%),
+    linear-gradient(90deg, rgba(5, 12, 20, 0.24) 0%, rgba(5, 12, 20, 0.03) 10%, rgba(5, 12, 20, 0.03) 90%, rgba(5, 12, 20, 0.24) 100%);
+}
+
+body[data-page="home"] .cover-copy > .eyebrow {
+  margin-top: 132px;
 }
 
 body[data-page="home"] .cover-copy h2,
