@@ -357,6 +357,60 @@ a {
     linear-gradient(180deg, #c6dbee 0%, #9ebbd3 20%, #67839e 34%, #3d5770 48%, #22384d 62%, #152737 100%);
 }
 
+.hero-gallery {
+  position: absolute;
+  inset: 0 0 38% 0;
+  z-index: 0;
+}
+
+.hero-gallery-stage {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  opacity: 0.96;
+  transition: background-image 220ms ease, background-position 220ms ease, opacity 220ms ease;
+}
+
+.hero-gallery-stage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(5, 12, 20, 0.02) 0%, rgba(5, 12, 20, 0.04) 46%, rgba(5, 12, 20, 0.14) 76%, rgba(5, 12, 20, 0.58) 100%);
+}
+
+.hero-gallery-controls {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  z-index: 2;
+}
+
+.hero-gallery-button {
+  padding: 9px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  background: rgba(8, 18, 32, 0.18);
+  color: #eff7ff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.hero-gallery-button:hover,
+.hero-gallery-button.active {
+  transform: translateY(-1px);
+  border-color: rgba(126, 247, 198, 0.32);
+  background: rgba(8, 18, 32, 0.32);
+}
+
 .cover-copy::before {
   content: "";
   position: absolute;
@@ -654,6 +708,15 @@ body[data-page="home"] .cover-copy::before {
 
 body[data-page="home"] .cover-scenery {
   display: none;
+}
+
+body[data-page="home"] .hero-gallery {
+  inset: 0 0 42% 0;
+}
+
+body[data-page="home"] .hero-gallery-stage::after {
+  background:
+    linear-gradient(180deg, rgba(5, 12, 20, 0.01) 0%, rgba(5, 12, 20, 0.03) 48%, rgba(5, 12, 20, 0.12) 76%, rgba(5, 12, 20, 0.54) 100%);
 }
 
 body[data-page="home"] .cover-copy h2,
@@ -1075,6 +1138,10 @@ body[data-page="home"] .button.secondary {
     grid-template-columns: 1fr;
   }
 
+  .hero-gallery {
+    inset: 0 0 48% 0;
+  }
+
   .article-toc {
     position: static;
   }
@@ -1109,6 +1176,17 @@ body[data-page="home"] .button.secondary {
   .hero-copy h2 {
     max-width: none;
     font-size: clamp(2rem, 11vw, 3rem);
+  }
+
+  .hero-gallery-controls {
+    top: 14px;
+    left: 14px;
+    right: 14px;
+  }
+
+  .hero-gallery-button {
+    padding: 8px 12px;
+    font-size: 0.88rem;
   }
 
   .resource-summary {

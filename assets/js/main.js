@@ -244,6 +244,32 @@ function bindSearch() {
   });
 }
 
+function initHeroGallery() {
+  const stage = document.getElementById("hero-gallery-stage");
+  const controls = document.getElementById("hero-gallery-controls");
+  if (!stage || !controls) {
+    return;
+  }
+
+  const buttons = Array.from(controls.querySelectorAll(".hero-gallery-button"));
+  if (!buttons.length) {
+    return;
+  }
+
+  const setActive = (button) => {
+    const image = resolveSiteLink(button.dataset.image || "");
+    stage.style.backgroundImage = `url("${image}")`;
+    stage.style.backgroundPosition = button.dataset.position || "center top";
+    buttons.forEach((item) => item.classList.toggle("active", item === button));
+  };
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => setActive(button));
+  });
+
+  setActive(buttons[0]);
+}
+
 function init() {
   const page = document.body.dataset.page;
 
@@ -254,6 +280,7 @@ function init() {
     renderResources("note-list", 4);
     renderReference("reference-list", 4);
     renderToolbox("toolbox-list");
+    initHeroGallery();
   }
 
   if (page === "topics") {

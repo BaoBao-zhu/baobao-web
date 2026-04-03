@@ -1,0 +1,33 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <g opacity="0.68">
+    <circle cx="290" cy="160" r="2.5" fill="#F8FAFF"/>
+    <circle cx="398" cy="126" r="1.7" fill="#F8FAFF"/>
+    <circle cx="578" cy="214" r="2.1" fill="#F8FAFF"/>
+    <circle cx="960" cy="148" r="2.7" fill="#F8FAFF"/>
+    <circle cx="1260" cy="120" r="2.4" fill="#F8FAFF"/>
+    <circle cx="1362" cy="228" r="1.8" fill="#F8FAFF"/>
+    <circle cx="1184" cy="308" r="1.6" fill="#F8FAFF"/>
+  </g>
+  <circle cx="1135" cy="190" r="98" fill="url(#planet)"/>
+  <ellipse cx="1135" cy="190" rx="156" ry="34" stroke="#A7E3FF" stroke-opacity="0.65" stroke-width="8"/>
+  <ellipse cx="520" cy="540" rx="520" ry="190" fill="url(#gridGlow)"/>
+  <path d="M0 652C151 590 246 593 364 593C505 593 587 652 716 652C868 652 933 576 1096 576C1288 576 1432 702 1600 702V900H0V652Z" fill="#10243A"/>
+  <path d="M0 734C148 734 237 674 372 674C497 674 602 751 733 751C878 751 964 679 1104 679C1263 679 1410 777 1600 777V900H0V734Z" fill="#08131F"/>
+  <defs>
+    <linearGradient id="bg" x1="800" y1="0" x2="800" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#070E23"/>
+      <stop offset="0.5" stop-color="#11264A"/>
+      <stop offset="1" stop-color="#08131F"/>
+    </linearGradient>
+    <radialGradient id="planet" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1135 190) rotate(90) scale(98)">
+      <stop stop-color="#EAF5FF"/>
+      <stop offset="0.4" stop-color="#78D7FF"/>
+      <stop offset="1" stop-color="#2A4E77"/>
+    </radialGradient>
+    <radialGradient id="gridGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(520 540) rotate(90) scale(190 520)">
+      <stop stop-color="#74CCFF" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#74CCFF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>
