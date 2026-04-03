@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Agent 笔记 | BaoBao Web</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Noto+Sans+SC:wght@400;500;700;900&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="../../../assets/css/site.css">
+</head>
+<body>
+  <div class="page-shell inner-shell">
+    <header class="inner-hero">
+      <nav class="topbar">
+        <a class="brand" href="../../../index.html">
+          <span class="brand-mark">B</span>
+          <div>
+            <p class="eyebrow">BaoBao Web</p>
+            <h1>AI Agent Notes</h1>
+          </div>
+        </a>
+        <div class="nav-links">
+          <a href="../../resources/index.html">学习文档</a>
+          <a href="../../topics/index.html">学习专题</a>
+          <a href="../../reference/index.html">资料查询</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section article-hero">
+        <p class="eyebrow">AI Agent</p>
+        <h3>AI Agent 工具调用与工作流笔记</h3>
+        <p class="lead">适合沉淀你对 Agent 的理解，而不是只记 API。可以长期记录怎么拆任务、怎么调用工具、怎么组织状态。</p>
+      </section>
+
+      <section class="section article-layout">
+        <aside class="article-toc">
+          <p class="eyebrow">Index</p>
+          <a href="#model">模型不是全部</a>
+          <a href="#tools">工具调用</a>
+          <a href="#workflow">工作流</a>
+          <a href="#pitfalls">常见坑</a>
+        </aside>
+        <article class="article-content">
+          <section id="model">
+            <h4>1. 模型能力只是起点</h4>
+            <p>真正让 Agent 稳定工作的往往不是更强模型本身，而是上下文组织、任务切分和失败恢复策略。</p>
+          </section>
+          <section id="tools">
+            <h4>2. 工具调用要显式建模</h4>
+            <p>把可用工具看成接口能力集合，包括输入格式、失败模式、是否阻塞主流程，而不是把所有事情都留给模型自由发挥。</p>
+          </section>
+          <section id="workflow">
+            <h4>3. 工作流比单次回答更重要</h4>
+            <p>多步任务建议拆成：理解目标、取上下文、执行动作、验证结果、再修正。很多时候这比一条长 prompt 更稳。</p>
+            <pre class="code-block"><code>一个常见流程：
+plan -> inspect -> act -> verify -> summarize
+
+如果任务复杂，再加:
+branch -> parallel -> integrate</code></pre>
+          </section>
+          <section id="pitfalls">
+            <h4>4. 常见坑</h4>
+            <ul class="plain-list">
+              <li>工具太多但没有使用边界</li>
+              <li>缺少验证步骤，导致输出看起来对但实际不可用</li>
+              <li>上下文堆得太满，真正关键约束反而被淹没</li>
+            </ul>
+          </section>
+        </article>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

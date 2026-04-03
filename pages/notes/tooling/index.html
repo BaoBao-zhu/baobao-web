@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tooling Notes | BaoBao Web</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Noto+Sans+SC:wght@400;500;700;900&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="../../../assets/css/site.css">
+</head>
+<body>
+  <div class="page-shell inner-shell">
+    <header class="inner-hero">
+      <nav class="topbar">
+        <a class="brand" href="../../../index.html">
+          <span class="brand-mark">B</span>
+          <div>
+            <p class="eyebrow">BaoBao Web</p>
+            <h1>Tooling Notes</h1>
+          </div>
+        </a>
+        <div class="nav-links">
+          <a href="../../resources/index.html">学习文档</a>
+          <a href="../../topics/index.html">学习专题</a>
+          <a href="../../reference/index.html">资料查询</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section article-hero">
+        <p class="eyebrow">Tooling</p>
+        <h3>Linux / Git / 调试工具的实用备忘</h3>
+        <p class="lead">适合记录你日常开发里真正高频的习惯和组合，而不是做成大而全的命令百科。</p>
+      </section>
+
+      <section class="section article-layout">
+        <aside class="article-toc">
+          <p class="eyebrow">Index</p>
+          <a href="#shell">Shell 习惯</a>
+          <a href="#git">Git 操作</a>
+          <a href="#debug">调试思路</a>
+        </aside>
+        <article class="article-content">
+          <section id="shell">
+            <h4>1. Shell 习惯</h4>
+            <p>优先使用 `rg`、`find`、`sed -n` 这类小而准的工具组合，减少“一个命令做所有事”的复杂度。</p>
+          </section>
+          <section id="git">
+            <h4>2. Git 操作</h4>
+            <p>把查看差异、保存现场、整理 commit、确认远程状态做成固定流程，会比到处查命令更高效。</p>
+          </section>
+          <section id="debug">
+            <h4>3. 调试思路</h4>
+            <p>先缩小范围，再查证据，再动手修改。很多时候真正节省时间的是排查路径，而不是记更多命令。</p>
+          </section>
+        </article>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

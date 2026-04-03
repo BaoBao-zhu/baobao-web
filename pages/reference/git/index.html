@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Git Reference | BaoBao Web</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Noto+Sans+SC:wght@400;500;700;900&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="../../../assets/css/site.css">
+</head>
+<body>
+  <div class="page-shell inner-shell">
+    <header class="inner-hero">
+      <nav class="topbar">
+        <a class="brand" href="../../../index.html">
+          <span class="brand-mark">B</span>
+          <div>
+            <p class="eyebrow">BaoBao Web</p>
+            <h1>Git Reference</h1>
+          </div>
+        </a>
+        <div class="nav-links">
+          <a href="../index.html">资料查询</a>
+          <a href="../../resources/index.html">学习文档</a>
+          <a href="../../topics/index.html">学习专题</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section article-hero">
+        <p class="eyebrow">Git</p>
+        <h3>Git 日常命令与救援手册</h3>
+      </section>
+      <section class="section cheatsheet-grid">
+        <article class="cheatsheet-card">
+          <h4>查看状态</h4>
+          <pre class="code-block"><code>git status --short
+git log --oneline -5
+git diff
+git diff --staged</code></pre>
+        </article>
+        <article class="cheatsheet-card">
+          <h4>保存现场</h4>
+          <pre class="code-block"><code>git stash
+git stash list
+git stash pop
+git switch branch-name</code></pre>
+        </article>
+        <article class="cheatsheet-card">
+          <h4>整理提交</h4>
+          <pre class="code-block"><code>git add .
+git commit -m "message"
+git push
+git pull --rebase</code></pre>
+        </article>
+        <article class="cheatsheet-card">
+          <h4>排查历史</h4>
+          <pre class="code-block"><code>git blame file
+git show COMMIT
+git log -- path/to/file
+git checkout BRANCH -- file</code></pre>
+        </article>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

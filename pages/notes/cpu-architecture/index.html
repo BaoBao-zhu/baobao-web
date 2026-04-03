@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CPU 体系结构学习笔记 | BaoBao Web</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Noto+Sans+SC:wght@400;500;700;900&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="../../../assets/css/site.css">
+</head>
+<body>
+  <div class="page-shell inner-shell">
+    <header class="inner-hero">
+      <nav class="topbar">
+        <a class="brand" href="../../../index.html">
+          <span class="brand-mark">B</span>
+          <div>
+            <p class="eyebrow">BaoBao Web</p>
+            <h1>CPU Notes</h1>
+          </div>
+        </a>
+        <div class="nav-links">
+          <a href="../../resources/index.html">学习文档</a>
+          <a href="../../topics/index.html">学习专题</a>
+          <a href="../../reference/index.html">资料查询</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section article-hero">
+        <p class="eyebrow">CPU Architecture</p>
+        <h3>从五级流水到乱序执行的学习路线</h3>
+        <p class="lead">这页适合作为 CPU 体系结构系列的总入口。后续可以继续加入图示、例子和你自己的理解。</p>
+      </section>
+
+      <section class="section article-layout">
+        <aside class="article-toc">
+          <p class="eyebrow">Index</p>
+          <a href="#foundation">基础阶段</a>
+          <a href="#advanced">进阶阶段</a>
+          <a href="#practice">建议练习</a>
+          <a href="#reading">延伸阅读</a>
+        </aside>
+        <article class="article-content">
+          <section id="foundation">
+            <h4>1. 基础阶段</h4>
+            <p>先建立最稳定的骨架：指令执行流程、五级流水、数据冒险、控制冒险、Cache 层次和基本性能指标。</p>
+            <div class="article-card-list">
+              <div class="article-card">
+                <h5>关键问题</h5>
+                <p>为什么流水线提高的是吞吐而不是单条指令延迟？数据前递和暂停分别解决什么问题？</p>
+              </div>
+              <div class="article-card">
+                <h5>推荐抓手</h5>
+                <p>拿一条 load-use hazard 或 branch mispredict 例子，自己画出每个 cycle 的状态变化。</p>
+              </div>
+            </div>
+          </section>
+
+          <section id="advanced">
+            <h4>2. 进阶阶段</h4>
+            <p>再进入乱序执行、寄存器重命名、ROB、调度窗口、Load/Store Queue 和分支预测器。重点是资源冲突和依赖解除。</p>
+            <pre class="code-block"><code>学习建议：
+1. 先看 in-order pipeline 的瓶颈
+2. 再理解 rename / issue queue / ROB 的必要性
+3. 最后再看 memory ordering 和 speculation</code></pre>
+          </section>
+
+          <section id="practice">
+            <h4>3. 建议练习</h4>
+            <p>结合你自己的模拟器、RISC-V 工具链或课程实验，把流水线图、scoreboard 和简单预测器都亲手实现一遍。</p>
+          </section>
+
+          <section id="reading">
+            <h4>4. 延伸阅读</h4>
+            <ul class="plain-list">
+              <li>Hennessy & Patterson 相关章节</li>
+              <li>BOOM / gem5 / SimpleScalar 等开源实现</li>
+              <li>你自己的课程笔记和微架构实验总结</li>
+            </ul>
+          </section>
+        </article>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

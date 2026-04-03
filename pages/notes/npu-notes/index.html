@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NPU 学习笔记 | BaoBao Web</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Noto+Sans+SC:wght@400;500;700;900&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="../../../assets/css/site.css">
+</head>
+<body>
+  <div class="page-shell inner-shell">
+    <header class="inner-hero">
+      <nav class="topbar">
+        <a class="brand" href="../../../index.html">
+          <span class="brand-mark">B</span>
+          <div>
+            <p class="eyebrow">BaoBao Web</p>
+            <h1>NPU Notes</h1>
+          </div>
+        </a>
+        <div class="nav-links">
+          <a href="../../resources/index.html">学习文档</a>
+          <a href="../../topics/index.html">学习专题</a>
+          <a href="../../reference/index.html">资料查询</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section article-hero">
+        <p class="eyebrow">Neural Network Accelerators</p>
+        <h3>NPU 数据流、存储层次与编译整理</h3>
+        <p class="lead">适合作为你后续 NPU 系列文章的总入口，兼顾架构、编译和系统视角。</p>
+      </section>
+
+      <section class="section article-layout">
+        <aside class="article-toc">
+          <p class="eyebrow">Index</p>
+          <a href="#dataflow">数据流</a>
+          <a href="#memory">存储层次</a>
+          <a href="#compiler">编译映射</a>
+          <a href="#questions">常问问题</a>
+        </aside>
+        <article class="article-content">
+          <section id="dataflow">
+            <h4>1. 数据流先理顺</h4>
+            <p>weight stationary、output stationary、row stationary 很容易背混，最好的方式是自己画数据在 PE 阵列和片上 buffer 之间怎么流动。</p>
+          </section>
+          <section id="memory">
+            <h4>2. 存储层次决定代价</h4>
+            <p>很多优化最后都落到“减少更高层级存储访问次数”。可以把每层 buffer 的容量、带宽和重用关系做成表格。</p>
+          </section>
+          <section id="compiler">
+            <h4>3. 编译映射别只停在概念</h4>
+            <p>把 tiling、loop ordering、operator fusion、layout transform 放到一个统一框架下，会更容易看到设计空间。</p>
+            <pre class="code-block"><code>看 NPU 论文时可优先问：
+- 它优化的是 compute、data movement 还是 mapping？
+- bottleneck 在 on-chip 还是 off-chip？
+- 编译器是否参与了调度或 layout 决策？</code></pre>
+          </section>
+          <section id="questions">
+            <h4>4. 推荐长期维护的问题列表</h4>
+            <ul class="plain-list">
+              <li>稀疏性发生在模型、算子还是运行时输入？</li>
+              <li>性能瓶颈更像带宽受限还是利用率受限？</li>
+              <li>编译器和硬件接口暴露到了什么粒度？</li>
+            </ul>
+          </section>
+        </article>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

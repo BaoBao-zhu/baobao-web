@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Linux Reference | BaoBao Web</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Noto+Sans+SC:wght@400;500;700;900&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="../../../assets/css/site.css">
+</head>
+<body>
+  <div class="page-shell inner-shell">
+    <header class="inner-hero">
+      <nav class="topbar">
+        <a class="brand" href="../../../index.html">
+          <span class="brand-mark">B</span>
+          <div>
+            <p class="eyebrow">BaoBao Web</p>
+            <h1>Linux Reference</h1>
+          </div>
+        </a>
+        <div class="nav-links">
+          <a href="../index.html">资料查询</a>
+          <a href="../../resources/index.html">学习文档</a>
+          <a href="../../topics/index.html">学习专题</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section article-hero">
+        <p class="eyebrow">Linux</p>
+        <h3>Linux 常见命令速查</h3>
+      </section>
+      <section class="section cheatsheet-grid">
+        <article class="cheatsheet-card">
+          <h4>文件与目录</h4>
+          <pre class="code-block"><code>ls -lah
+find . -maxdepth 2 -type f
+du -sh *
+tree -L 2</code></pre>
+        </article>
+        <article class="cheatsheet-card">
+          <h4>进程与端口</h4>
+          <pre class="code-block"><code>ps aux | grep python
+top
+lsof -i :8000
+kill -9 PID</code></pre>
+        </article>
+        <article class="cheatsheet-card">
+          <h4>日志与文本</h4>
+          <pre class="code-block"><code>tail -f app.log
+sed -n '1,120p' file.txt
+grep -R "pattern" .
+rg "pattern"</code></pre>
+        </article>
+        <article class="cheatsheet-card">
+          <h4>权限与环境</h4>
+          <pre class="code-block"><code>chmod +x script.sh
+which python3
+echo $PATH
+env | sort</code></pre>
+        </article>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

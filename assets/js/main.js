@@ -20,6 +20,10 @@ function resolveSiteLink(link) {
   return `${prefix}${link.slice(2)}`;
 }
 
+function linkAttrs(link) {
+  return /^https?:\/\//.test(link || "") ? 'target="_blank" rel="noreferrer"' : "";
+}
+
 function limitItems(items, count) {
   return typeof count === "number" ? items.slice(0, count) : items;
 }
@@ -40,7 +44,7 @@ function renderPapers(selector, count) {
       <div class="tag-row">
         ${(paper.tags || []).map((tag) => `<span class="mini-tag">${tag}</span>`).join("")}
       </div>
-      <a class="paper-link" href="${resolveSiteLink(paper.link)}" target="_blank" rel="noreferrer">查看详情</a>
+      <a class="paper-link" href="${resolveSiteLink(paper.link)}" ${linkAttrs(resolveSiteLink(paper.link))}>查看详情</a>
     </article>
   `).join("");
 }
@@ -68,7 +72,7 @@ function renderToolbox(selector) {
   }
 
   target.innerHTML = (siteData.toolboxLinks || []).map((item) => `
-    <a class="toolbox-card" href="${resolveSiteLink(item.link)}" target="_blank" rel="noreferrer">
+    <a class="toolbox-card" href="${resolveSiteLink(item.link)}" ${linkAttrs(resolveSiteLink(item.link))}>
       <h4>${item.title}</h4>
       <p>${item.meta}</p>
     </a>
@@ -138,7 +142,7 @@ function renderResources(selector, count) {
       <span class="resource-type">${resource.type}</span>
       <h4>${resource.title}</h4>
       <p class="resource-meta">${resource.meta}</p>
-      <a class="resource-link" href="${resolveSiteLink(resource.link)}" target="_blank" rel="noreferrer">打开入口</a>
+      <a class="resource-link" href="${resolveSiteLink(resource.link)}" ${linkAttrs(resolveSiteLink(resource.link))}>打开入口</a>
     </article>
   `).join("") : `
     <article class="resource-empty">
@@ -160,7 +164,7 @@ function renderReference(selector, count) {
       <span class="resource-type">${item.type}</span>
       <h4>${item.title}</h4>
       <p class="resource-meta">${item.meta}</p>
-      <a class="resource-link" href="${resolveSiteLink(item.link)}" target="_blank" rel="noreferrer">打开入口</a>
+      <a class="resource-link" href="${resolveSiteLink(item.link)}" ${linkAttrs(resolveSiteLink(item.link))}>打开入口</a>
     </article>
   `).join("");
 }

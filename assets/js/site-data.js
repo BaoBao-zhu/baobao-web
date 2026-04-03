@@ -65,7 +65,7 @@ window.siteData = {
       title: "从五级流水到乱序执行的学习路线",
       meta: "按概念、经典教材、论文和个人总结来组织 CPU 体系结构学习笔记。",
       keywords: ["cpu", "architecture", "pipeline", "ooo"],
-      link: "#"
+      link: "@/pages/notes/cpu-architecture/index.html"
     },
     {
       type: "神经网络加速器",
@@ -73,7 +73,7 @@ window.siteData = {
       title: "NPU 数据流、存储层次与编译整理",
       meta: "围绕 PE 阵列、数据复用、片上缓存和编译映射方式整理成系列文档。",
       keywords: ["npu", "accelerator", "compiler", "systolic"],
-      link: "#"
+      link: "@/pages/notes/npu-notes/index.html"
     },
     {
       type: "AI Agent",
@@ -81,7 +81,7 @@ window.siteData = {
       title: "AI Agent 工具调用与工作流笔记",
       meta: "记录 Agent 的工具使用、命令习惯、工作流设计和踩坑经验。",
       keywords: ["agent", "tool use", "workflow", "prompt"],
-      link: "#"
+      link: "@/pages/notes/ai-agent/index.html"
     },
     {
       type: "系统工具",
@@ -89,7 +89,7 @@ window.siteData = {
       title: "Linux / Git / 调试工具的实用备忘",
       meta: "把你每天真会用到的命令、组合和排错思路整理成一页页短文。",
       keywords: ["linux", "git", "debug", "tooling"],
-      link: "#"
+      link: "@/pages/notes/tooling/index.html"
     }
   ],
   references: [
@@ -98,28 +98,28 @@ window.siteData = {
       title: "Linux 常见命令速查",
       meta: "进程、文件、网络、权限、压缩、日志和环境变量相关的高频命令。",
       keywords: ["linux", "command", "shell"],
-      link: "#"
+      link: "@/pages/reference/linux/index.html"
     },
     {
       type: "AI Agent",
       title: "AI Agent 常用命令与工作流清单",
       meta: "整理模型调用、工具命令、部署习惯和排错命令。",
       keywords: ["agent", "command", "tool", "workflow"],
-      link: "#"
+      link: "@/pages/reference/agent/index.html"
     },
     {
       type: "Git",
       title: "Git 日常命令与救援手册",
       meta: "覆盖 branch、stash、rebase、log、diff 和常见误操作恢复。",
       keywords: ["git", "rebase", "stash", "diff"],
-      link: "#"
+      link: "@/pages/reference/git/index.html"
     },
     {
       type: "Research",
       title: "论文与项目检索入口",
       meta: "把 Scholar、arXiv、DBLP、GitHub 和常用检索网站整理在一起。",
       keywords: ["scholar", "arxiv", "dblp", "github"],
-      link: "#"
+      link: "@/pages/reference/research/index.html"
     }
   ],
   archiveLinks: [
