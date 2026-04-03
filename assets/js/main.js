@@ -1,12 +1,24 @@
 const siteData = window.siteData || {};
 const tabs = [
   { label: "全部", value: "all" },
-  { label: "学习资料", value: "study" },
-  { label: "查阅入口", value: "reference" }
+  { label: "CPU", value: "cpu" },
+  { label: "NPU", value: "npu" },
+  { label: "Agent", value: "agent" },
+  { label: "Tooling", value: "tooling" }
 ];
 
 let activeCategory = "all";
 let activeQuery = "";
+
+function resolveSiteLink(link) {
+  if (!link || !link.startsWith("@/")) {
+    return link;
+  }
+
+  const depth = Math.max(window.location.pathname.split("/").filter(Boolean).length - 1, 0);
+  const prefix = depth > 0 ? "../".repeat(depth) : "./";
+  return `${prefix}${link.slice(2)}`;
+}
 
 function limitItems(items, count) {
   return typeof count === "number" ? items.slice(0, count) : items;
@@ -28,8 +40,24 @@ function renderPapers(selector, count) {
       <div class="tag-row">
         ${(paper.tags || []).map((tag) => `<span class="mini-tag">${tag}</span>`).join("")}
       </div>
-      <a class="paper-link" href="${paper.link}" target="_blank" rel="noreferrer">查看详情</a>
+      <a class="paper-link" href="${resolveSiteLink(paper.link)}" target="_blank" rel="noreferrer">查看详情</a>
     </article>
+  `).join("");
+}
+
+function renderTopics(selector, count) {
+  const target = document.getElementById(selector);
+  if (!target) {
+    return;
+  }
+
+  const topics = limitItems(siteData.topics || [], count);
+  target.innerHTML = topics.map((topic) => `
+    <a class="overview-card" href="${resolveSiteLink(topic.link)}">
+      <span class="card-tag">Topic</span>
+      <h4>${topic.title}</h4>
+      <p>${topic.meta}</p>
+    </a>
   `).join("");
 }
 
@@ -40,7 +68,7 @@ function renderToolbox(selector) {
   }
 
   target.innerHTML = (siteData.toolboxLinks || []).map((item) => `
-    <a class="toolbox-card" href="${item.link}" target="_blank" rel="noreferrer">
+    <a class="toolbox-card" href="${resolveSiteLink(item.link)}" target="_blank" rel="noreferrer">
       <h4>${item.title}</h4>
       <p>${item.meta}</p>
     </a>
@@ -110,29 +138,29 @@ function renderResources(selector, count) {
       <span class="resource-type">${resource.type}</span>
       <h4>${resource.title}</h4>
       <p class="resource-meta">${resource.meta}</p>
-      <a class="resource-link" href="${resource.link}" target="_blank" rel="noreferrer">打开入口</a>
+      <a class="resource-link" href="${resolveSiteLink(resource.link)}" target="_blank" rel="noreferrer">打开入口</a>
     </article>
   `).join("") : `
     <article class="resource-empty">
       <h4>没有匹配结果</h4>
-      <p class="resource-meta">可以换一个关键词，或者直接在 assets/js/site-data.js 里新增资料条目。</p>
+      <p class="resource-meta">可以换一个关键词，或者直接在 assets/js/site-data.js 里新增学习文档条目。</p>
     </article>
   `;
 }
 
-function renderTimeline(selector) {
+function renderReference(selector, count) {
   const target = document.getElementById(selector);
   if (!target) {
     return;
   }
 
-  target.innerHTML = (siteData.timelineEvents || []).map((event) => `
-    <article class="timeline-item">
-      <div class="timeline-time">${event.time}</div>
-      <div class="timeline-content">
-        <h4>${event.title}</h4>
-        <p>${event.desc}</p>
-      </div>
+  const references = limitItems(siteData.references || [], count);
+  target.innerHTML = references.map((item) => `
+    <article class="resource-card">
+      <span class="resource-type">${item.type}</span>
+      <h4>${item.title}</h4>
+      <p class="resource-meta">${item.meta}</p>
+      <a class="resource-link" href="${resolveSiteLink(item.link)}" target="_blank" rel="noreferrer">打开入口</a>
     </article>
   `).join("");
 }
@@ -183,17 +211,18 @@ function init() {
   const page = document.body.dataset.page;
 
   if (page === "home") {
-    renderPapers("paper-list", 3);
-    renderResources("resource-list", 4);
+    renderTopics("topic-list", 4);
+    renderResources("note-list", 4);
+    renderReference("reference-list", 4);
     renderToolbox("toolbox-list");
   }
 
-  if (page === "about") {
+  if (page === "topics") {
+    renderTopics("topic-list");
+  }
+
+  if (page === "archive") {
     renderProfile();
-    renderToolbox("toolbox-list");
-  }
-
-  if (page === "papers") {
     renderPapers("paper-list");
   }
 
@@ -203,8 +232,8 @@ function init() {
     renderResources("resource-list");
   }
 
-  if (page === "timeline") {
-    renderTimeline("timeline-list");
+  if (page === "reference") {
+    renderReference("reference-list");
   }
 }
 

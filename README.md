@@ -12,10 +12,10 @@
 ## 目录
 
 - `index.html`: 首页概览
-- `pages/about/index.html`: 个人介绍页
-- `pages/papers/index.html`: 论文页
-- `pages/resources/index.html`: 资料页
-- `pages/timeline/index.html`: 时间线页
+- `pages/topics/index.html`: 学习专题页
+- `pages/resources/index.html`: 学习文档页
+- `pages/reference/index.html`: 资料查询页
+- `pages/archive/index.html`: 低调归档页
 - `assets/css/site.css`: 全站样式
 - `assets/js/site-data.js`: 全站内容数据
 - `assets/js/main.js`: 页面渲染逻辑

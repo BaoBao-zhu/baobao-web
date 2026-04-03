@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Timeline | Baobao</title>
+  <title>Archive | BaoBao Web</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -12,22 +12,22 @@
   >
   <link rel="stylesheet" href="../../assets/css/site.css">
 </head>
-<body data-page="timeline">
+<body data-page="archive">
   <div class="page-shell inner-shell">
     <header class="inner-hero">
       <nav class="topbar">
         <a class="brand" href="../../index.html">
           <span class="brand-mark">B</span>
           <div>
-            <p class="eyebrow">Baobao Web</p>
-            <h1>Timeline</h1>
+            <p class="eyebrow">BaoBao Web</p>
+            <h1>Archive</h1>
           </div>
         </a>
         <div class="nav-links">
           <a href="../../index.html">首页</a>
-          <a href="../about/index.html">关于我</a>
-          <a href="../papers/index.html">论文</a>
-          <a href="../resources/index.html">资料</a>
+          <a href="../topics/index.html">学习专题</a>
+          <a href="../resources/index.html">学习文档</a>
+          <a href="../reference/index.html">资料查询</a>
         </div>
       </nav>
     </header>
@@ -36,12 +36,26 @@
       <section class="section">
         <div class="section-heading split-heading">
           <div>
-            <p class="eyebrow">Timeline</p>
-            <h3>研究与学习时间线</h3>
+            <p class="eyebrow">Profile</p>
+            <h3>低调保留的个人信息</h3>
           </div>
-          <p class="heading-note">适合记录项目里程碑、投稿、课程、答辩和代码开源。</p>
+          <p class="heading-note">这个页面不放在首页主视觉区域，只作为安静的归档入口。</p>
         </div>
-        <div class="timeline-list" id="timeline-list"></div>
+        <div class="about-grid">
+          <article class="card intro-card" id="profile-card"></article>
+          <article class="card metrics-card" id="focus-list"></article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="eyebrow">Publications</p>
+            <h3>论文与过往成果归档</h3>
+          </div>
+          <p class="heading-note">需要时可以保留少量论文记录，不作为这个站点的主要用途。</p>
+        </div>
+        <div class="paper-grid" id="paper-list"></div>
       </section>
     </main>
   </div>

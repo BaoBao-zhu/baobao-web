@@ -349,6 +349,13 @@ a {
   font-weight: 800;
 }
 
+.overview-card,
+.toolbox-card,
+.paper-card,
+.resource-card {
+  transition: transform 180ms ease, background 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
 .metrics-card {
   display: grid;
   gap: 16px;
