@@ -270,6 +270,7 @@ function initHeroGallery() {
     const current = images[index];
     stage.style.backgroundImage = `url("${resolveSiteLink(current.src)}")`;
     stage.style.backgroundPosition = current.position || "center top";
+    stage.style.backgroundSize = current.size || "cover";
   };
 
   prev.addEventListener("click", () => {
