@@ -35,34 +35,54 @@
       <section class="section article-hero">
         <p class="eyebrow">AI Agent</p>
         <h3>AI Agent 常用命令与工作流清单</h3>
+        <p class="lead">这里更偏方法论和操作习惯，而不是某个具体框架的 API 手册。重点是怎么让 Agent 的结果更稳、更可验证。</p>
       </section>
       <section class="section cheatsheet-grid">
         <article class="cheatsheet-card">
           <h4>基本工作流</h4>
           <pre class="code-block"><code>inspect -> plan -> act
 verify -> summarize
-small steps > giant step</code></pre>
+small steps > giant step
+evidence before edit</code></pre>
         </article>
         <article class="cheatsheet-card">
           <h4>高频习惯</h4>
           <pre class="code-block"><code>先读目录结构
 先看已有数据模型
 先确认路径和依赖
-最后再做大改动</code></pre>
+最后再做大改动
+先验证再结束</code></pre>
         </article>
         <article class="cheatsheet-card">
           <h4>提示词提醒</h4>
           <pre class="code-block"><code>明确目标
 限制输出范围
 要求验证
-保留可维护性</code></pre>
+保留可维护性
+说明假设条件</code></pre>
         </article>
         <article class="cheatsheet-card">
           <h4>排错清单</h4>
           <pre class="code-block"><code>链接是否正确
 脚本是否加载
 路径是否相对正确
-部署后是否缓存</code></pre>
+部署后是否缓存
+工具权限是否足够</code></pre>
+        </article>
+        <article class="cheatsheet-card">
+          <h4>工具设计原则</h4>
+          <pre class="code-block"><code>工具要小而清晰
+输入输出要稳定
+失败信息要明确
+能并行就不要串行阻塞</code></pre>
+        </article>
+        <article class="cheatsheet-card">
+          <h4>复杂任务拆解</h4>
+          <pre class="code-block"><code>1. 明确最终目标
+2. 收集局部上下文
+3. 划分可验证步骤
+4. 每步留检查点
+5. 最后统一总结</code></pre>
         </article>
       </section>
     </main>

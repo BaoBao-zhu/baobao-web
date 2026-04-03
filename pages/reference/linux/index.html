@@ -35,6 +35,7 @@
       <section class="section article-hero">
         <p class="eyebrow">Linux</p>
         <h3>Linux 常见命令速查</h3>
+        <p class="lead">这页优先收录真正高频的排查、文件、日志和环境相关命令。目标不是全，而是遇到问题时能最快找到入口。</p>
       </section>
       <section class="section cheatsheet-grid">
         <article class="cheatsheet-card">
@@ -42,28 +43,52 @@
           <pre class="code-block"><code>ls -lah
 find . -maxdepth 2 -type f
 du -sh *
-tree -L 2</code></pre>
+tree -L 2
+pwd
+realpath file.txt</code></pre>
         </article>
         <article class="cheatsheet-card">
           <h4>进程与端口</h4>
           <pre class="code-block"><code>ps aux | grep python
 top
 lsof -i :8000
-kill -9 PID</code></pre>
+ss -lntp
+kill -9 PID
+pkill -f server.py</code></pre>
         </article>
         <article class="cheatsheet-card">
           <h4>日志与文本</h4>
           <pre class="code-block"><code>tail -f app.log
 sed -n '1,120p' file.txt
 grep -R "pattern" .
-rg "pattern"</code></pre>
+rg "pattern"
+journalctl -u service-name
+wc -l file.txt</code></pre>
         </article>
         <article class="cheatsheet-card">
           <h4>权限与环境</h4>
           <pre class="code-block"><code>chmod +x script.sh
 which python3
 echo $PATH
-env | sort</code></pre>
+env | sort
+source ~/.bashrc
+uname -a</code></pre>
+        </article>
+        <article class="cheatsheet-card">
+          <h4>压缩与传输</h4>
+          <pre class="code-block"><code>tar -czf out.tar.gz dir/
+tar -xzf out.tar.gz
+scp file user@host:/path/
+rsync -av dir/ remote:/path/</code></pre>
+        </article>
+        <article class="cheatsheet-card">
+          <h4>排错思路</h4>
+          <pre class="code-block"><code>先看:
+1. 路径对不对
+2. 权限够不够
+3. 端口有没有占用
+4. 日志里有没有直接报错
+5. 环境变量是否缺失</code></pre>
         </article>
       </section>
     </main>

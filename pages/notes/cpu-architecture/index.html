@@ -60,6 +60,9 @@
                 <p>拿一条 load-use hazard 或 branch mispredict 例子，自己画出每个 cycle 的状态变化。</p>
               </div>
             </div>
+            <pre class="code-block"><code>基础学习顺序建议：
+ISA -> 单周期/多周期 -> 五级流水
+-> hazard -> cache -> 性能分析</code></pre>
           </section>
 
           <section id="advanced">
@@ -69,11 +72,26 @@
 1. 先看 in-order pipeline 的瓶颈
 2. 再理解 rename / issue queue / ROB 的必要性
 3. 最后再看 memory ordering 和 speculation</code></pre>
+            <div class="article-card-list">
+              <div class="article-card">
+                <h5>看 OoO 时优先抓什么</h5>
+                <p>先问它如何解除假相关、如何选择 ready 指令、如何保证最终提交顺序，而不是先被大量结构名字淹没。</p>
+              </div>
+              <div class="article-card">
+                <h5>常见误区</h5>
+                <p>把“乱序执行”误解成“程序顺序不重要”。真正不变的是架构可见结果和提交语义，不是内部执行顺序。</p>
+              </div>
+            </div>
           </section>
 
           <section id="practice">
             <h4>3. 建议练习</h4>
             <p>结合你自己的模拟器、RISC-V 工具链或课程实验，把流水线图、scoreboard 和简单预测器都亲手实现一遍。</p>
+            <ul class="plain-list">
+              <li>自己构造一段存在 RAW/WAR/WAW 风险的指令序列，观察不同微架构会怎么处理。</li>
+              <li>实现一个简单的 bimodal predictor，对比不同分支模式下的命中率。</li>
+              <li>统计某段程序的 CPI 分解，分清 stall 到底来自 cache miss、branch 还是结构冲突。</li>
+            </ul>
           </section>
 
           <section id="reading">
@@ -83,6 +101,7 @@
               <li>BOOM / gem5 / SimpleScalar 等开源实现</li>
               <li>你自己的课程笔记和微架构实验总结</li>
             </ul>
+            <p>如果你后面想把这页继续扩成系列，可以接着拆出“分支预测”、“Memory Hierarchy”、“OoO Core”和“RISC-V 实验记录”几个子页。</p>
           </section>
         </article>
       </section>

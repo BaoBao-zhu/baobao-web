@@ -35,6 +35,7 @@
       <section class="section article-hero">
         <p class="eyebrow">Git</p>
         <h3>Git 日常命令与救援手册</h3>
+        <p class="lead">按“看状态、保存现场、整理提交、排查历史、谨慎救援”来组织，会比记零散命令更可靠。</p>
       </section>
       <section class="section cheatsheet-grid">
         <article class="cheatsheet-card">
@@ -42,28 +43,51 @@
           <pre class="code-block"><code>git status --short
 git log --oneline -5
 git diff
-git diff --staged</code></pre>
+git diff --staged
+git branch -vv
+git remote -v</code></pre>
         </article>
         <article class="cheatsheet-card">
           <h4>保存现场</h4>
           <pre class="code-block"><code>git stash
 git stash list
 git stash pop
-git switch branch-name</code></pre>
+git switch branch-name
+git switch -c new-branch</code></pre>
         </article>
         <article class="cheatsheet-card">
           <h4>整理提交</h4>
           <pre class="code-block"><code>git add .
 git commit -m "message"
 git push
-git pull --rebase</code></pre>
+git pull --rebase
+git commit --amend</code></pre>
         </article>
         <article class="cheatsheet-card">
           <h4>排查历史</h4>
           <pre class="code-block"><code>git blame file
 git show COMMIT
 git log -- path/to/file
-git checkout BRANCH -- file</code></pre>
+git checkout BRANCH -- file
+git reflog</code></pre>
+        </article>
+        <article class="cheatsheet-card">
+          <h4>协作前自查</h4>
+          <pre class="code-block"><code>推送前先确认：
+1. 当前分支对不对
+2. status 是否干净
+3. commit message 是否清楚
+4. 有没有误把临时文件带进去</code></pre>
+        </article>
+        <article class="cheatsheet-card">
+          <h4>危险操作提醒</h4>
+          <pre class="code-block"><code>慎用：
+git reset --hard
+git push --force
+git clean -fd
+
+先看 diff / stash / branch，
+再做破坏性动作。</code></pre>
         </article>
       </section>
     </main>
