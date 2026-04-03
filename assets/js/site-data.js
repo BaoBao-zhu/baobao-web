@@ -14,23 +14,65 @@ window.siteData = {
     {
       title: "CPU 体系结构",
       meta: "围绕流水线、乱序执行、Cache、分支预测、内存一致性等主题建立长期学习地图。",
-      link: "@/pages/resources/index.html"
+      status: "active",
+      depth: "12 notes planned",
+      link: "@/pages/notes/cpu-architecture/index.html"
     },
     {
       title: "神经网络加速器",
       meta: "整理 NPU、数据流、稀疏计算、片上存储、调度与编译相关资料。",
-      link: "@/pages/resources/index.html"
+      status: "expanding",
+      depth: "8 notes planned",
+      link: "@/pages/notes/npu-notes/index.html"
     },
     {
       title: "AI Agent",
       meta: "记录 Agent 框架、工具调用、提示设计、工作流编排和常用命令。",
-      link: "@/pages/resources/index.html"
+      status: "tracking",
+      depth: "6 notes planned",
+      link: "@/pages/notes/ai-agent/index.html"
     },
     {
       title: "系统与工具链",
       meta: "沉淀 Linux、Git、脚本工具、调试方法和日常开发命令。",
+      status: "stable",
+      depth: "reference first",
       link: "@/pages/reference/index.html"
     }
+  ],
+  updates: [
+    {
+      type: "Note Update",
+      title: "CPU 笔记补充了 OoO 学习抓手和练习路径",
+      meta: "从基础流水线、ROB、rename 到建议练习，适合作为体系结构主线入口。",
+      link: "@/pages/notes/cpu-architecture/index.html"
+    },
+    {
+      type: "Reference",
+      title: "Linux / Git / AI Agent 查询页已拆成独立手册",
+      meta: "命令不再只是列表，而是按日常使用场景分类整理。",
+      link: "@/pages/reference/index.html"
+    },
+    {
+      type: "Topic",
+      title: "首页调整为知识中控台风格",
+      meta: "新增专题状态、近期更新和标签流，更适合长期维护。",
+      link: "@/index.html"
+    }
+  ],
+  tags: [
+    "Pipeline",
+    "OoO",
+    "Memory Hierarchy",
+    "Dataflow",
+    "Sparsity",
+    "Compiler Mapping",
+    "Agent Workflow",
+    "Tool Use",
+    "Linux",
+    "Git",
+    "Debugging",
+    "RISC-V"
   ],
   papers: [
     {

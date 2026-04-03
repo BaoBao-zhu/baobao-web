@@ -44,16 +44,31 @@
           <a href="#model">模型不是全部</a>
           <a href="#tools">工具调用</a>
           <a href="#workflow">工作流</a>
+          <a href="#evaluation">评估与验证</a>
           <a href="#pitfalls">常见坑</a>
         </aside>
         <article class="article-content">
           <section id="model">
             <h4>1. 模型能力只是起点</h4>
             <p>真正让 Agent 稳定工作的往往不是更强模型本身，而是上下文组织、任务切分和失败恢复策略。</p>
+            <div class="article-card-list">
+              <div class="article-card">
+                <h5>实用判断</h5>
+                <p>如果问题主要卡在检索、工具失败、路径错误或状态不一致，单纯换更强模型往往不是最有效解。</p>
+              </div>
+              <div class="article-card">
+                <h5>常见错觉</h5>
+                <p>把“Agent 不稳定”归咎给模型，其实更常见的原因是工作流没有留验证点。</p>
+              </div>
+            </div>
           </section>
           <section id="tools">
             <h4>2. 工具调用要显式建模</h4>
             <p>把可用工具看成接口能力集合，包括输入格式、失败模式、是否阻塞主流程，而不是把所有事情都留给模型自由发挥。</p>
+            <pre class="code-block"><code>设计工具时可问：
+- 输入是否足够小而明确？
+- 输出能不能直接被下一个步骤消费？
+- 失败时是否返回可行动信息？</code></pre>
           </section>
           <section id="workflow">
             <h4>3. 工作流比单次回答更重要</h4>
@@ -63,14 +78,35 @@ plan -> inspect -> act -> verify -> summarize
 
 如果任务复杂，再加:
 branch -> parallel -> integrate</code></pre>
+            <ul class="plain-list">
+              <li>需要跨文件或跨系统的信息时，优先先“inspect”而不是直接“act”。</li>
+              <li>一旦存在副作用操作，最好单独插入“verify”阶段。</li>
+              <li>长任务最好把上下文和目标分段，而不是一次塞满。</li>
+            </ul>
+          </section>
+          <section id="evaluation">
+            <h4>4. 评估与验证</h4>
+            <p>Agent 的结果好不好，不该只看输出是否流畅，而应看它是否可执行、可追溯、可维护、可复现。</p>
+            <div class="article-card-list">
+              <div class="article-card">
+                <h5>最小验证闭环</h5>
+                <p>输出前至少确认：目标是否命中、路径是否存在、命令是否可运行、网页是否可访问、改动是否与需求一致。</p>
+              </div>
+              <div class="article-card">
+                <h5>高风险任务</h5>
+                <p>涉及权限、金钱、生产环境、删除操作时，必须把验证和确认显式放进流程里。</p>
+              </div>
+            </div>
           </section>
           <section id="pitfalls">
-            <h4>4. 常见坑</h4>
+            <h4>5. 常见坑</h4>
             <ul class="plain-list">
               <li>工具太多但没有使用边界</li>
               <li>缺少验证步骤，导致输出看起来对但实际不可用</li>
               <li>上下文堆得太满，真正关键约束反而被淹没</li>
+              <li>过早下结论，没有先检查代码、文件或页面的真实状态</li>
             </ul>
+            <p>这页后续非常适合继续拆成“Prompt 设计”“Tool Use 设计”“Agent 验证策略”“多 Agent 协作模式”几个专题页。</p>
           </section>
         </article>
       </section>

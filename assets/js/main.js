@@ -61,7 +61,39 @@ function renderTopics(selector, count) {
       <span class="card-tag">Topic</span>
       <h4>${topic.title}</h4>
       <p>${topic.meta}</p>
+      <div class="topic-meta">
+        <span class="mini-tag">${topic.status || "active"}</span>
+        <span class="topic-depth">${topic.depth || ""}</span>
+      </div>
     </a>
+  `).join("");
+}
+
+function renderUpdates(selector, count) {
+  const target = document.getElementById(selector);
+  if (!target) {
+    return;
+  }
+
+  const updates = limitItems(siteData.updates || [], count);
+  target.innerHTML = updates.map((item) => `
+    <a class="update-item" href="${resolveSiteLink(item.link)}" ${linkAttrs(resolveSiteLink(item.link))}>
+      <span class="card-tag">${item.type}</span>
+      <h4>${item.title}</h4>
+      <p>${item.meta}</p>
+    </a>
+  `).join("");
+}
+
+function renderTags(selector, count) {
+  const target = document.getElementById(selector);
+  if (!target) {
+    return;
+  }
+
+  const tags = limitItems(siteData.tags || [], count);
+  target.innerHTML = tags.map((tag) => `
+    <span class="tag-chip">${tag}</span>
   `).join("");
 }
 
@@ -216,6 +248,8 @@ function init() {
 
   if (page === "home") {
     renderTopics("topic-list", 4);
+    renderUpdates("update-list", 3);
+    renderTags("tag-cloud", 12);
     renderResources("note-list", 4);
     renderReference("reference-list", 4);
     renderToolbox("toolbox-list");

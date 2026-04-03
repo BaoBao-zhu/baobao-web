@@ -44,16 +44,31 @@
           <a href="#dataflow">数据流</a>
           <a href="#memory">存储层次</a>
           <a href="#compiler">编译映射</a>
+          <a href="#evaluation">评价维度</a>
           <a href="#questions">常问问题</a>
         </aside>
         <article class="article-content">
           <section id="dataflow">
             <h4>1. 数据流先理顺</h4>
             <p>weight stationary、output stationary、row stationary 很容易背混，最好的方式是自己画数据在 PE 阵列和片上 buffer 之间怎么流动。</p>
+            <div class="article-card-list">
+              <div class="article-card">
+                <h5>最值得先比较的点</h5>
+                <p>激活、权重和部分和分别固定在哪一层；谁在移动；重用到底发生在 PE、阵列还是 buffer。</p>
+              </div>
+              <div class="article-card">
+                <h5>常见阅读误区</h5>
+                <p>只看论文图里的 dataflow 名称，不去追问具体 loop nest、tile shape 和 memory traffic。</p>
+              </div>
+            </div>
           </section>
           <section id="memory">
             <h4>2. 存储层次决定代价</h4>
             <p>很多优化最后都落到“减少更高层级存储访问次数”。可以把每层 buffer 的容量、带宽和重用关系做成表格。</p>
+            <pre class="code-block"><code>看存储层次时常问：
+- 哪一层最容易成为带宽瓶颈？
+- 片上 buffer 是否足够撑住 tile？
+- 数据重用是否真的发生，还是只是理论上存在？</code></pre>
           </section>
           <section id="compiler">
             <h4>3. 编译映射别只停在概念</h4>
@@ -62,14 +77,35 @@
 - 它优化的是 compute、data movement 还是 mapping？
 - bottleneck 在 on-chip 还是 off-chip？
 - 编译器是否参与了调度或 layout 决策？</code></pre>
+            <ul class="plain-list">
+              <li>如果硬件非常灵活，那编译器复杂度通常会上升。</li>
+              <li>如果映射策略写死，软件栈简单，但泛化能力可能变弱。</li>
+              <li>layout 变换很多时候不是附属细节，而是决定效率的主因之一。</li>
+            </ul>
+          </section>
+          <section id="evaluation">
+            <h4>4. 评价一个 NPU 方案时看什么</h4>
+            <p>不要只看 TOPS 或吞吐，至少还要一起看数据搬运代价、利用率、面积约束、灵活性和软件栈成熟度。</p>
+            <div class="article-card-list">
+              <div class="article-card">
+                <h5>架构侧</h5>
+                <p>PE 阵列形状、buffer 组织、互连方式、稀疏支持、调度灵活性。</p>
+              </div>
+              <div class="article-card">
+                <h5>系统侧</h5>
+                <p>是否容易接入真实模型、编译器是否可用、性能是否能在端到端场景里兑现。</p>
+              </div>
+            </div>
           </section>
           <section id="questions">
-            <h4>4. 推荐长期维护的问题列表</h4>
+            <h4>5. 推荐长期维护的问题列表</h4>
             <ul class="plain-list">
               <li>稀疏性发生在模型、算子还是运行时输入？</li>
               <li>性能瓶颈更像带宽受限还是利用率受限？</li>
               <li>编译器和硬件接口暴露到了什么粒度？</li>
+              <li>这个方案如果换一个模型族，收益还成立吗？</li>
             </ul>
+            <p>如果你后续继续写，下一步很适合拆出“Dataflow 深挖”“Sparse NPU”“Compiler Mapping Case Study”三个子页面。</p>
           </section>
         </article>
       </section>
