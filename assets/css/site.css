@@ -642,19 +642,21 @@ body[data-page="home"] .cover-sidebar {
 }
 
 body[data-page="home"] .cover-copy {
-  background:
-    linear-gradient(180deg, rgba(8, 18, 32, 0.08), rgba(8, 18, 32, 0.28)),
-    linear-gradient(180deg, rgba(82, 119, 155, 0.05), rgba(18, 34, 50, 0.38));
+  background: linear-gradient(180deg, rgba(7, 16, 28, 0.04), rgba(7, 16, 28, 0.18));
 }
 
 body[data-page="home"] .cover-copy::before {
-  background:
-    radial-gradient(circle at 70% 16%, rgba(255, 255, 255, 0.16), transparent 10%),
-    linear-gradient(180deg, transparent 0 62%, rgba(6, 12, 22, 0.16) 62% 100%);
+  display: none;
 }
 
 body[data-page="home"] .cover-scenery {
-  opacity: 0.18;
+  display: none;
+}
+
+body[data-page="home"] .cover-copy h2,
+body[data-page="home"] .cover-copy .lead,
+body[data-page="home"] .cover-copy .eyebrow {
+  text-shadow: 0 8px 30px rgba(4, 10, 18, 0.45);
 }
 
 body[data-page="home"] .cover-nav-item {
