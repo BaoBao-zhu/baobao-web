@@ -1,19 +1,19 @@
 :root {
-  --bg: #07111f;
-  --bg-2: #0b1830;
-  --panel: rgba(10, 22, 43, 0.78);
-  --panel-strong: rgba(8, 19, 39, 0.92);
-  --panel-soft: rgba(12, 26, 50, 0.72);
-  --text: #e9f4ff;
-  --muted: #91a8c5;
-  --line: rgba(104, 178, 255, 0.16);
-  --line-strong: rgba(104, 178, 255, 0.34);
+  --bg: #dce9f7;
+  --bg-2: #c5d9ef;
+  --panel: rgba(242, 248, 255, 0.7);
+  --panel-strong: rgba(233, 242, 252, 0.86);
+  --panel-soft: rgba(228, 239, 251, 0.72);
+  --text: #102133;
+  --muted: #5a718a;
+  --line: rgba(69, 122, 175, 0.16);
+  --line-strong: rgba(69, 122, 175, 0.32);
   --accent: #69d2ff;
   --accent-2: #7ef7c6;
   --accent-3: #8c82ff;
   --accent-warm: #ff9f6e;
-  --shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
-  --glow: 0 0 0 1px rgba(105, 210, 255, 0.12), 0 0 28px rgba(105, 210, 255, 0.12);
+  --shadow: 0 24px 70px rgba(36, 61, 90, 0.16);
+  --glow: 0 0 0 1px rgba(105, 210, 255, 0.08), 0 0 22px rgba(105, 210, 255, 0.08);
   --radius-xl: 30px;
   --radius-lg: 22px;
   --radius-md: 16px;
@@ -32,10 +32,10 @@ body {
   color: var(--text);
   font-family: "Manrope", "Noto Sans SC", sans-serif;
   background:
-    radial-gradient(circle at 20% 0%, rgba(126, 247, 198, 0.12), transparent 24%),
-    radial-gradient(circle at 80% 10%, rgba(140, 130, 255, 0.16), transparent 22%),
-    radial-gradient(circle at 50% 100%, rgba(105, 210, 255, 0.1), transparent 30%),
-    linear-gradient(180deg, #06101c 0%, #091426 45%, #07111f 100%);
+    radial-gradient(circle at 18% 0%, rgba(126, 247, 198, 0.16), transparent 24%),
+    radial-gradient(circle at 82% 8%, rgba(140, 130, 255, 0.14), transparent 20%),
+    radial-gradient(circle at 50% 100%, rgba(105, 210, 255, 0.14), transparent 28%),
+    linear-gradient(180deg, #edf5fd 0%, #dce9f7 44%, #d4e4f4 100%);
   position: relative;
 }
 
@@ -44,12 +44,12 @@ body::before {
   position: fixed;
   inset: 0;
   background-image:
-    linear-gradient(rgba(105, 210, 255, 0.055) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(105, 210, 255, 0.055) 1px, transparent 1px);
+    linear-gradient(rgba(105, 210, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(105, 210, 255, 0.05) 1px, transparent 1px);
   background-size: 36px 36px;
   mask-image: radial-gradient(circle at center, black 35%, transparent 100%);
   pointer-events: none;
-  opacity: 0.45;
+  opacity: 0.3;
 }
 
 a {
@@ -73,7 +73,7 @@ a {
   border: 1px solid var(--line);
   border-radius: var(--radius-xl);
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 25%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.28), transparent 25%),
     var(--panel);
   backdrop-filter: blur(20px);
   box-shadow: var(--shadow), var(--glow);
@@ -144,7 +144,7 @@ a {
   display: grid;
   place-items: center;
   font-weight: 900;
-  color: #04101f;
+  color: #08203a;
   background:
     linear-gradient(135deg, var(--accent), var(--accent-2));
   box-shadow: 0 0 24px rgba(105, 210, 255, 0.42);
@@ -173,8 +173,8 @@ a {
   padding: 10px 14px;
   border-radius: 999px;
   border: 1px solid var(--line);
-  background: rgba(10, 21, 40, 0.86);
-  color: #d9eeff;
+  background: rgba(247, 251, 255, 0.9);
+  color: #163250;
   font: inherit;
   cursor: pointer;
   transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
@@ -193,7 +193,7 @@ a {
   transform: translateY(-3px);
   border-color: var(--line-strong);
   box-shadow: 0 0 0 1px rgba(105, 210, 255, 0.16), 0 14px 40px rgba(0, 0, 0, 0.28);
-  background: rgba(13, 27, 53, 0.95);
+  background: rgba(246, 250, 255, 0.98);
 }
 
 .hero-content,
@@ -235,7 +235,7 @@ a {
   margin: 0;
   max-width: 8ch;
   font-family: "Noto Sans SC", sans-serif;
-  font-size: clamp(2.3rem, 4.8vw, 3.9rem);
+  font-size: clamp(2rem, 4vw, 3.35rem);
   line-height: 1.02;
   letter-spacing: -0.03em;
 }
@@ -276,14 +276,14 @@ a {
 }
 
 .button.primary {
-  color: #07111f;
+  color: #08203a;
   background: linear-gradient(135deg, var(--accent), var(--accent-2));
   box-shadow: 0 0 26px rgba(105, 210, 255, 0.24);
 }
 
 .button.secondary {
   border: 1px solid var(--line);
-  background: rgba(8, 19, 36, 0.9);
+  background: rgba(246, 250, 255, 0.78);
   color: var(--text);
 }
 
@@ -319,8 +319,8 @@ a {
 .hero-panel {
   background:
     radial-gradient(circle at top right, rgba(126, 247, 198, 0.18), transparent 26%),
-    linear-gradient(180deg, rgba(8, 21, 38, 0.98), rgba(7, 17, 31, 0.98));
-  color: #eaf7ff;
+    linear-gradient(180deg, rgba(246, 250, 255, 0.98), rgba(228, 239, 251, 0.96));
+  color: var(--text);
 }
 
 .cover-sidebar,
@@ -335,7 +335,7 @@ a {
 .cover-sidebar {
   padding: 20px;
   background:
-    linear-gradient(180deg, rgba(8, 21, 38, 0.98), rgba(7, 17, 31, 0.98));
+    linear-gradient(180deg, rgba(244, 249, 255, 0.96), rgba(232, 241, 251, 0.92));
   display: grid;
   gap: 16px;
 }
@@ -346,12 +346,13 @@ a {
   justify-content: end;
   min-height: 100%;
   padding: 34px;
+  color: #f4f9ff;
   background:
-    linear-gradient(180deg, rgba(4, 10, 22, 0.12), rgba(5, 10, 22, 0.78)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(8, 20, 36, 0.46)),
     radial-gradient(circle at 50% 18%, rgba(126, 247, 198, 0.2), transparent 18%),
     radial-gradient(circle at 72% 22%, rgba(105, 210, 255, 0.28), transparent 14%),
-    linear-gradient(180deg, rgba(13, 30, 58, 0.28), rgba(6, 14, 28, 0.88)),
-    linear-gradient(180deg, #33506a 0%, #243d52 20%, #16283e 34%, #0f1d31 48%, #0a1526 62%, #08111d 100%);
+    linear-gradient(180deg, rgba(82, 119, 155, 0.12), rgba(27, 47, 69, 0.78)),
+    linear-gradient(180deg, #c6dbee 0%, #9ebbd3 20%, #67839e 34%, #3d5770 48%, #22384d 62%, #152737 100%);
 }
 
 .cover-copy::before {
@@ -359,8 +360,8 @@ a {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 70% 16%, rgba(255, 255, 255, 0.18), transparent 10%),
-    linear-gradient(180deg, transparent 0 46%, rgba(11, 24, 39, 0.08) 46% 48%, transparent 48%),
+    radial-gradient(circle at 70% 16%, rgba(255, 255, 255, 0.22), transparent 10%),
+    linear-gradient(180deg, transparent 0 46%, rgba(255, 255, 255, 0.06) 46% 48%, transparent 48%),
     linear-gradient(160deg, transparent 0 56%, rgba(4, 11, 21, 0.36) 56% 70%, transparent 70%),
     linear-gradient(200deg, transparent 0 52%, rgba(5, 12, 23, 0.42) 52% 68%, transparent 68%),
     linear-gradient(180deg, transparent 0 66%, rgba(6, 12, 22, 0.58) 66% 100%);
@@ -467,8 +468,8 @@ a {
   padding: 8px 10px;
   border-radius: 999px;
   border: 1px solid rgba(105, 210, 255, 0.16);
-  color: var(--accent);
-  background: rgba(11, 24, 46, 0.84);
+  color: #0c4f79;
+  background: rgba(246, 250, 255, 0.9);
   font-size: 0.74rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -481,7 +482,7 @@ a {
 
 .cover-group-title {
   margin: 0;
-  color: rgba(233, 244, 255, 0.54);
+  color: rgba(16, 33, 51, 0.48);
   font-size: 0.74rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -489,6 +490,7 @@ a {
 
 .cover-sidebar .panel-label {
   margin: 0;
+  color: rgba(16, 33, 51, 0.62);
 }
 
 .cover-nav-item {
@@ -497,20 +499,20 @@ a {
   padding: 14px 14px 16px;
   border: 1px solid rgba(105, 210, 255, 0.12);
   border-radius: 18px;
-  background: rgba(13, 27, 53, 0.72);
+  background: rgba(249, 252, 255, 0.72);
   transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
 }
 
 .cover-nav-item.active {
   border-color: rgba(126, 247, 198, 0.34);
-  background: linear-gradient(180deg, rgba(18, 39, 71, 0.98), rgba(10, 24, 45, 0.98));
+  background: linear-gradient(180deg, rgba(235, 247, 243, 0.98), rgba(221, 236, 247, 0.98));
   box-shadow: 0 0 0 1px rgba(126, 247, 198, 0.08), 0 0 24px rgba(126, 247, 198, 0.08);
 }
 
 .cover-nav-item:hover {
   transform: translateY(-2px);
   border-color: var(--line-strong);
-  background: rgba(15, 31, 60, 0.94);
+  background: rgba(244, 249, 255, 0.96);
 }
 
 .cover-nav-label {
@@ -536,11 +538,11 @@ a {
   display: grid;
   gap: 6px;
   padding-top: 10px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(16, 33, 51, 0.08);
 }
 
 .cover-sidebar-foot span {
-  color: rgba(233, 244, 255, 0.54);
+  color: rgba(16, 33, 51, 0.48);
   font-size: 0.74rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -556,6 +558,7 @@ a {
 
 .cover-copy .lead {
   max-width: 40ch;
+  color: rgba(244, 249, 255, 0.82);
 }
 
 .cover-tags {
@@ -570,9 +573,9 @@ a {
   align-items: center;
   padding: 10px 13px;
   border-radius: 999px;
-  border: 1px solid rgba(233, 244, 255, 0.16);
-  background: rgba(6, 18, 34, 0.46);
-  color: #eef7ff;
+  border: 1px solid rgba(247, 251, 255, 0.22);
+  background: rgba(18, 42, 67, 0.26);
+  color: #f7fbff;
   font-size: 0.9rem;
   font-weight: 700;
   backdrop-filter: blur(8px);
@@ -580,7 +583,47 @@ a {
 
 .cover-tag:hover {
   border-color: rgba(126, 247, 198, 0.34);
-  background: rgba(8, 21, 40, 0.74);
+  background: rgba(14, 34, 56, 0.48);
+}
+
+.custom-image-layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1.1fr);
+  gap: 24px;
+  align-items: center;
+}
+
+.custom-image-copy h3 {
+  margin: 0;
+  font-family: "Noto Sans SC", sans-serif;
+}
+
+.custom-image-frame {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: rgba(246, 250, 255, 0.72);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+.custom-image-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.custom-image-frame figcaption {
+  padding: 14px 18px 18px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.custom-image-frame code {
+  color: var(--text);
+  font-family: inherit;
 }
 
 .dashboard-panel,
@@ -960,6 +1003,10 @@ a {
     grid-template-columns: 1fr;
   }
 
+  .custom-image-layout {
+    grid-template-columns: 1fr;
+  }
+
   .article-toc {
     position: static;
   }
@@ -993,7 +1040,7 @@ a {
 
   .hero-copy h2 {
     max-width: none;
-    font-size: clamp(2.4rem, 14vw, 3.8rem);
+    font-size: clamp(2rem, 11vw, 3rem);
   }
 
   .resource-summary {

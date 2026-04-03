@@ -1,0 +1,32 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#DDEBFA"/>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="1160" cy="180" r="120" fill="url(#sun)"/>
+  <path d="M0 566C130 526 205 454 302 454C400 454 462 535 557 535C646 535 701 469 787 469C889 469 947 575 1046 575C1144 575 1234 434 1350 434C1468 434 1538 536 1600 574V900H0V566Z" fill="#88A9C8" fill-opacity="0.55"/>
+  <path d="M0 617C139 617 216 505 315 505C433 505 518 630 623 630C731 630 816 525 924 525C1030 525 1112 644 1225 644C1359 644 1472 546 1600 497V900H0V617Z" fill="#557694" fill-opacity="0.76"/>
+  <path d="M0 722C110 658 211 635 327 635C466 635 550 737 681 737C799 737 892 663 1001 663C1120 663 1232 744 1368 744C1457 744 1528 710 1600 671V900H0V722Z" fill="#2D4A67"/>
+  <rect y="726" width="1600" height="174" fill="url(#water)"/>
+  <g opacity="0.78">
+    <rect x="272" y="245" width="440" height="360" rx="30" fill="#F7FBFF" fill-opacity="0.18" stroke="#F7FBFF" stroke-opacity="0.38"/>
+    <text x="328" y="330" fill="#F7FBFF" font-family="Manrope, Arial, sans-serif" font-size="26" letter-spacing="7">CUSTOM VISUAL</text>
+    <text x="328" y="416" fill="#FFFFFF" font-family="Noto Sans SC, Arial, sans-serif" font-size="58" font-weight="700">Replace Me</text>
+    <text x="328" y="480" fill="#EFF6FF" font-family="Noto Sans SC, Arial, sans-serif" font-size="28">把这张图替换成你自己的封面图即可</text>
+    <text x="328" y="536" fill="#D7E7F8" font-family="Manrope, Arial, sans-serif" font-size="24">assets/images/custom-feature.svg</text>
+  </g>
+  <defs>
+    <linearGradient id="bg" x1="800" y1="0" x2="800" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#B8D2EC"/>
+      <stop offset="0.45" stop-color="#89A9C8"/>
+      <stop offset="1" stop-color="#18324E"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1160 180) rotate(90) scale(120)">
+      <stop stop-color="#FFF7D6" stop-opacity="0.95"/>
+      <stop offset="0.45" stop-color="#F6F0C7" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#FFF7D6" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="water" x1="800" y1="726" x2="800" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7FA1BF" stop-opacity="0.34"/>
+      <stop offset="1" stop-color="#17324F" stop-opacity="0.95"/>
+    </linearGradient>
+  </defs>
+</svg>
