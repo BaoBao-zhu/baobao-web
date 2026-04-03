@@ -632,18 +632,18 @@ body[data-page="home"] .hero,
 body[data-page="home"] .section,
 body[data-page="home"] .footer {
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 25%),
-    rgba(12, 22, 36, 0.07);
-  backdrop-filter: blur(6px);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 25%),
+    rgba(8, 16, 28, 0.02);
+  backdrop-filter: none;
 }
 
 body[data-page="home"] .cover-sidebar {
-  background: linear-gradient(180deg, rgba(12, 22, 36, 0.18), rgba(10, 18, 30, 0.24));
-  backdrop-filter: blur(10px);
+  background: linear-gradient(180deg, rgba(8, 18, 32, 0.08), rgba(8, 18, 32, 0.12));
+  backdrop-filter: none;
 }
 
 body[data-page="home"] .cover-copy {
-  background: linear-gradient(180deg, rgba(7, 16, 28, 0.02), rgba(7, 16, 28, 0.1));
+  background: linear-gradient(180deg, rgba(7, 16, 28, 0.01), rgba(7, 16, 28, 0.04));
   backdrop-filter: none;
   box-shadow: none;
 }
@@ -663,16 +663,45 @@ body[data-page="home"] .cover-copy .eyebrow {
 }
 
 body[data-page="home"] .cover-nav-item {
-  background: rgba(8, 18, 32, 0.13);
+  background: rgba(8, 18, 32, 0.07);
 }
 
 body[data-page="home"] .cover-nav-item.active {
-  background: linear-gradient(180deg, rgba(18, 42, 58, 0.24), rgba(13, 27, 43, 0.32));
+  background: linear-gradient(180deg, rgba(18, 42, 58, 0.12), rgba(13, 27, 43, 0.18));
 }
 
 body[data-page="home"] .custom-image-frame {
-  background: rgba(9, 18, 31, 0.1);
-  backdrop-filter: blur(8px);
+  background: rgba(9, 18, 31, 0.05);
+  backdrop-filter: none;
+}
+
+body[data-page="home"] .hero,
+body[data-page="home"] .cover-sidebar,
+body[data-page="home"] .cover-copy,
+body[data-page="home"] .section,
+body[data-page="home"] .footer,
+body[data-page="home"] .cover-nav-item,
+body[data-page="home"] .custom-image-frame {
+  box-shadow: none;
+}
+
+body[data-page="home"] .hero::before,
+body[data-page="home"] .section::before,
+body[data-page="home"] .footer::before {
+  opacity: 0.3;
+}
+
+body[data-page="home"] .cover-copy h2,
+body[data-page="home"] .cover-copy .lead,
+body[data-page="home"] .cover-copy .eyebrow,
+body[data-page="home"] .cover-tag,
+body[data-page="home"] .button.secondary {
+  text-shadow: 0 10px 24px rgba(2, 8, 16, 0.65);
+}
+
+body[data-page="home"] .cover-tag,
+body[data-page="home"] .button.secondary {
+  background: rgba(8, 18, 32, 0.16);
 }
 
 .dashboard-panel,
