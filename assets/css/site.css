@@ -735,6 +735,61 @@ a {
   font-family: inherit;
 }
 
+body:not([data-page="home"]) .hero,
+body:not([data-page="home"]) .section,
+body:not([data-page="home"]) .footer,
+body:not([data-page="home"]) .inner-hero {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 25%),
+    rgba(8, 16, 28, 0.08);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 22px 56px rgba(4, 12, 24, 0.26), 0 0 0 1px rgba(105, 210, 255, 0.06);
+}
+
+body:not([data-page="home"]) .hero::before,
+body:not([data-page="home"]) .section::before,
+body:not([data-page="home"]) .footer::before,
+body:not([data-page="home"]) .inner-hero::before {
+  opacity: 0.52;
+}
+
+body:not([data-page="home"]) .nav-links a,
+body:not([data-page="home"]) .resource-tabs button,
+body:not([data-page="home"]) .footer-links a {
+  background: rgba(8, 18, 32, 0.28);
+  backdrop-filter: blur(6px);
+}
+
+body:not([data-page="home"]) .hero-panel,
+body:not([data-page="home"]) .card,
+body:not([data-page="home"]) .paper-card,
+body:not([data-page="home"]) .resource-card,
+body:not([data-page="home"]) .overview-card,
+body:not([data-page="home"]) .toolbox-card,
+body:not([data-page="home"]) .cheatsheet-card,
+body:not([data-page="home"]) .timeline-item,
+body:not([data-page="home"]) .resource-empty,
+body:not([data-page="home"]) .dashboard-panel,
+body:not([data-page="home"]) .workspace-card,
+body:not([data-page="home"]) .update-item,
+body:not([data-page="home"]) .article-card,
+body:not([data-page="home"]) .article-toc {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 30%),
+    rgba(9, 18, 31, 0.12);
+  backdrop-filter: blur(8px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+body:not([data-page="home"]) .tag-chip,
+body:not([data-page="home"]) .cover-tag,
+body:not([data-page="home"]) .button.secondary,
+body:not([data-page="home"]) .search-box input,
+body:not([data-page="home"]) .article-card,
+body:not([data-page="home"]) .code-block {
+  background-color: rgba(8, 18, 32, 0.2);
+}
+
 body[data-page="home"] .hero,
 body[data-page="home"] .section,
 body[data-page="home"] .footer {
