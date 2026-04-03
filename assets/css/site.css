@@ -36,7 +36,7 @@ body {
     radial-gradient(circle at 18% 0%, rgba(126, 247, 198, 0.12), transparent 24%),
     radial-gradient(circle at 82% 8%, rgba(140, 130, 255, 0.12), transparent 20%),
     radial-gradient(circle at 50% 100%, rgba(105, 210, 255, 0.12), transparent 28%),
-    url("../../Ischia1.jpg") center / cover fixed no-repeat,
+    url("../../Ischia1.jpg") center top / cover fixed no-repeat,
     linear-gradient(180deg, #122033 0%, #14253a 44%, #0e1b2c 100%);
   position: relative;
 }
