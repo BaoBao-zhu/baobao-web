@@ -15,28 +15,28 @@ window.siteData = {
       title: "CPU 体系结构",
       meta: "围绕流水线、乱序执行、Cache、分支预测、内存一致性等主题建立长期学习地图。",
       status: "active",
-      depth: "12 notes planned",
+      depth: "microarchitecture track",
       link: "@/pages/notes/cpu-architecture/index.html"
     },
     {
       title: "神经网络加速器",
       meta: "整理 NPU、数据流、稀疏计算、片上存储、调度与编译相关资料。",
       status: "expanding",
-      depth: "8 notes planned",
+      depth: "accelerator track",
       link: "@/pages/notes/npu-notes/index.html"
     },
     {
       title: "AI Agent",
       meta: "记录 Agent 框架、工具调用、提示设计、工作流编排和常用命令。",
       status: "tracking",
-      depth: "6 notes planned",
+      depth: "workflow track",
       link: "@/pages/notes/ai-agent/index.html"
     },
     {
       title: "系统与工具链",
       meta: "沉淀 Linux、Git、脚本工具、调试方法和日常开发命令。",
       status: "stable",
-      depth: "reference first",
+      depth: "tooling track",
       link: "@/pages/reference/index.html"
     }
   ],
@@ -55,8 +55,8 @@ window.siteData = {
     },
     {
       type: "Topic",
-      title: "首页调整为知识中控台风格",
-      meta: "新增专题状态、近期更新和标签流，更适合长期维护。",
+      title: "首页重构为更完整的技术入口页",
+      meta: "收敛模板感文案，强化导航、更新区和查询入口的真实使用感。",
       link: "@/index.html"
     }
   ],
