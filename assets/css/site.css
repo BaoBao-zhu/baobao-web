@@ -632,20 +632,20 @@ body[data-page="home"] .hero,
 body[data-page="home"] .section,
 body[data-page="home"] .footer {
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 25%),
-    rgba(8, 16, 28, 0.05);
-  backdrop-filter: blur(3px);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 25%),
+    rgba(8, 16, 28, 0.03);
+  backdrop-filter: blur(1px);
 }
 
 body[data-page="home"] .cover-sidebar {
-  background: linear-gradient(180deg, rgba(8, 18, 32, 0.12), rgba(8, 18, 32, 0.16));
-  backdrop-filter: blur(6px);
+  background: linear-gradient(180deg, rgba(8, 18, 32, 0.08), rgba(8, 18, 32, 0.1));
+  backdrop-filter: blur(2px);
 }
 
 body[data-page="home"] .cover-copy {
-  background: linear-gradient(180deg, rgba(7, 16, 28, 0.03), rgba(7, 16, 28, 0.08));
-  backdrop-filter: blur(2px);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  background: linear-gradient(180deg, rgba(7, 16, 28, 0.01), rgba(7, 16, 28, 0.04));
+  backdrop-filter: blur(0.5px);
+  box-shadow: none;
 }
 
 body[data-page="home"] .cover-copy::before {
@@ -663,16 +663,16 @@ body[data-page="home"] .cover-copy .eyebrow {
 }
 
 body[data-page="home"] .cover-nav-item {
-  background: rgba(8, 18, 32, 0.1);
+  background: rgba(8, 18, 32, 0.06);
 }
 
 body[data-page="home"] .cover-nav-item.active {
-  background: linear-gradient(180deg, rgba(18, 42, 58, 0.18), rgba(13, 27, 43, 0.24));
+  background: linear-gradient(180deg, rgba(18, 42, 58, 0.1), rgba(13, 27, 43, 0.14));
 }
 
 body[data-page="home"] .custom-image-frame {
-  background: rgba(9, 18, 31, 0.08);
-  backdrop-filter: blur(4px);
+  background: rgba(9, 18, 31, 0.04);
+  backdrop-filter: blur(1px);
 }
 
 body[data-page="home"] .hero::before,
