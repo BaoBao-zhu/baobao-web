@@ -79,6 +79,7 @@ function renderUpdates(selector, count) {
   target.innerHTML = updates.map((item) => `
     <a class="update-item" href="${resolveSiteLink(item.link)}" ${linkAttrs(resolveSiteLink(item.link))}>
       <span class="card-tag">${item.type}</span>
+      <span class="update-date">${item.date || ""}</span>
       <h4>${item.title}</h4>
       <p>${item.meta}</p>
     </a>

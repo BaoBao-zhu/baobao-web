@@ -43,18 +43,21 @@ window.siteData = {
   updates: [
     {
       type: "Note Update",
+      date: "2026-04-03",
       title: "CPU 笔记补充了 OoO 学习抓手和练习路径",
       meta: "从基础流水线、ROB、rename 到建议练习，适合作为体系结构主线入口。",
       link: "@/pages/notes/cpu-architecture/index.html"
     },
     {
       type: "Reference",
+      date: "2026-04-03",
       title: "Linux / Git / AI Agent 查询页已拆成独立手册",
       meta: "命令不再只是列表，而是按日常使用场景分类整理。",
       link: "@/pages/reference/index.html"
     },
     {
       type: "Topic",
+      date: "2026-04-03",
       title: "首页重构为更完整的技术入口页",
       meta: "收敛模板感文案，强化导航、更新区和查询入口的真实使用感。",
       link: "@/index.html"
@@ -179,22 +182,22 @@ window.siteData = {
   toolboxLinks: [
     {
       title: "GitHub",
-      meta: "代码仓库与站点源码入口",
+      meta: "代码仓库与站点源码",
       link: "https://github.com/BaoBao-zhu/baobao-web"
     },
     {
-      title: "Archive",
-      meta: "个人信息和论文归档页",
+      title: "归档页",
+      meta: "个人信息与论文归档",
       link: "@/pages/archive/index.html"
     },
     {
-      title: "Notes",
-      meta: "长期学习文档入口",
+      title: "学习文档",
+      meta: "长期技术笔记入口",
       link: "@/pages/resources/index.html"
     },
     {
-      title: "Reference",
-      meta: "命令和资料查询入口",
+      title: "资料查询",
+      meta: "命令与检索入口",
       link: "@/pages/reference/index.html"
     }
   ]
