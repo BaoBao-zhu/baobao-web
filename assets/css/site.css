@@ -360,9 +360,9 @@ a {
 .hero-gallery {
   position: absolute;
   top: 18px;
-  left: 22px;
-  right: 22px;
-  height: 42%;
+  left: 12px;
+  right: 12px;
+  height: 48%;
   z-index: 0;
 }
 
@@ -765,9 +765,9 @@ body[data-page="home"] .cover-scenery {
 
 body[data-page="home"] .hero-gallery {
   top: 16px;
-  left: 20px;
-  right: 20px;
-  height: 40%;
+  left: 12px;
+  right: 12px;
+  height: 46%;
 }
 
 body[data-page="home"] .hero-gallery-stage::after {
@@ -777,7 +777,7 @@ body[data-page="home"] .hero-gallery-stage::after {
 }
 
 body[data-page="home"] .cover-copy > .eyebrow {
-  margin-top: 176px;
+  margin-top: 214px;
 }
 
 body[data-page="home"] .cover-copy h2,
